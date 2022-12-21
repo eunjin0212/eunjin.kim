@@ -64,6 +64,7 @@ const GlobalStyle = createGlobalStyle`
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    background-color: #303437;
   }
 }
 `;
