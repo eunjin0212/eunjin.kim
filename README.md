@@ -1,6 +1,38 @@
-> 공부 하며 직접 만드는 내 포트폴리오
-> 더이상 템플릿으로 때우는 포트폴리오는 No!
+_공부 하며 직접 만드는 내 포트폴리오_
+
+<br/>
+
+# 개발일정
+
 > Start 22.12.21
+
+[deploy page](https://silverzin.vercel.app/)
+
+# 사용 기술
+
+![title](https://img.shields.io/badge/-HTML5-E34F26?&logo=html5&logoColor=white)
+![title](https://img.shields.io/badge/-SCSS-CC6699?&logo=Sass&logoColor=white)
+![title](https://img.shields.io/badge/-Javascript-EDD63F?&logo=javascript&logoColor=white)
+![title](https://img.shields.io/badge/-Next.js-000000?&logo=Next.js&logoColor=white)
+![title](https://img.shields.io/badge/-React-61DAFB?&logo=React&logoColor=white)
+![title](https://img.shields.io/badge/-React_Query-FF4154?&logo=ReactQuery&logoColor=white)
+![title](https://img.shields.io/badge/-styled_components-DB7093?&logo=styled-components&logoColor=white)
+![title](https://img.shields.io/badge/-TypeScript-3178C6?&logo=TypeScript&logoColor=white)
+
+# 요구사항
+
+|                       요구사항                        |
+| :---------------------------------------------------: |
+| 날짜와 위치를 사용한 현재 온도 + 온도별 옷차림 아이콘 |
+|              코드를 볼 수 있는 코드 블럭              |
+|                  이메일 보내는 기능                   |
+|               깃허브, 블로그 링크 연결                |
+|                     다크모드 지원                     |
+|           데이터에 구애받지 않는 컴포넌트화           |
+|                     일관성있는 ui                     |
+|             한 눈에 들어오는 지원자 정보              |
+|                       Notion UI                       |
+
 <!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
