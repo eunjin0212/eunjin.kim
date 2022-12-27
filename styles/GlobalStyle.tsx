@@ -67,6 +67,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: #303437;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+    background-color: #ffffff;
+  }
+}
 `;
 
 export default GlobalStyle;
