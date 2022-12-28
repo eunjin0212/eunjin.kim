@@ -1,10 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    font: inherit;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
     color: inherit;
     box-sizing: border-box;
   }
@@ -26,12 +25,16 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   body[data-theme="dark"] {
-    color: white;
+    * {
+      color: #ffffff;
+    }
     background-color: #303437;
   }
 
   body[data-theme="light"] {
-    color: #303437;
+    * {
+      color: #303437;
+    }
     background-color: #ffffff;
   }
 

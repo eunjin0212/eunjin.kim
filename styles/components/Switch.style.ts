@@ -5,7 +5,7 @@ export const CustomizedSwich = styled(Switch)`
   width: 48px;
 	height: 24px;
 	padding: 0;
-	margin: 10px;
+	margin: 0;
 	& .MuiSwitch-switchBase {
 		margin: 0;
 		padding: 0;
