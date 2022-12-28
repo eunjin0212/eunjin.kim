@@ -25,6 +25,15 @@ const GlobalStyle = createGlobalStyle`
   html, body, #__next {
     height: 100%;
   }
+  body[data-theme="dark"] {
+    color: white;
+    background-color: #303437;
+  }
+
+  body[data-theme="light"] {
+    color: #303437;
+    background-color: #ffffff;
+  }
 
   img, picture, video, svg, canvas {
     display: block;
@@ -60,20 +69,6 @@ const GlobalStyle = createGlobalStyle`
   :focus {
     outline: none;
   }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-    background-color: #303437;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-    background-color: #ffffff;
-  }
-}
 `;
 
 export default GlobalStyle;
