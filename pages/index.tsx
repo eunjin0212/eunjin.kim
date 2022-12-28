@@ -1,5 +1,5 @@
+import Header from 'components/Header';
 import Head from 'next/head';
-import ThemeMode from "../components/Switch";
 import GlobalStyle from '../styles/GlobalStyle';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<GlobalStyle />
-      <ThemeMode />
+      <Header/>
 		</>
 	);
 }
