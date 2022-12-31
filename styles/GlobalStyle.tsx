@@ -1,5 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+export interface ThemeInterface {
+	theme: {
+		body: string;
+		text: string;
+		toggleBackground: string;
+	};
+}
+
 const GlobalStyle = createGlobalStyle`
+  ${reset}
   * {
     margin: 0;
     padding: 0;
@@ -24,18 +34,10 @@ const GlobalStyle = createGlobalStyle`
   html, body, #__next {
     height: 100%;
   }
-  body[data-theme="dark"] {
-    * {
-      color: #ffffff;
-    }
-    background-color: #303437;
-  }
 
-  body[data-theme="light"] {
-    * {
-      color: #303437;
-    }
-    background-color: #ffffff;
+  #__next, .MuiAppBar-root, .MuiTypography-root {
+    background-color: ${({ theme }: ThemeInterface) => theme.body};
+    color: ${({ theme }: ThemeInterface) => theme.text};
   }
 
   img, picture, video, svg, canvas {

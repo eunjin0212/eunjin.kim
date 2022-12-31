@@ -1,21 +1,16 @@
 import { SwitchProps } from '@mui/material/Switch';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ThemeContext } from 'pages/_app';
+import { useContext } from 'react';
 import { CustomizedSwich } from 'styles/components/Switch.style';
-
+import { darkTheme } from 'styles/Theme';
 
 const ThemeMode = (props: SwitchProps) => {
-	const [mode, setMode] = useState<boolean>(window.localStorage.getItem('mode') === 'true');
-	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-		setMode(event.target.checked);
-		window.localStorage.setItem('mode', JSON.stringify(event.target.checked));
-	};
-	useEffect(() => {
-		document.body.dataset.theme = mode ? 'dark' : 'light';
-	}, [mode]);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
 	return (
 		<CustomizedSwich
-			checked={mode}
-			onChange={handleChange}
+			checked={theme === darkTheme}
+			onChange={toggleTheme}
 			focusVisibleClassName='.Mui-focusVisible'
 			disableRipple
 			{...props}

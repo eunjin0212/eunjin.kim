@@ -1,25 +1,36 @@
-import type { } from '@mui/lab/themeAugmentation';
 import { createTheme } from '@mui/material/styles';
+export const lightTheme = {
+  body: '#ffffff',
+  text: '#303437',
+  toggleBackground: '#D2D2D2',
+};
+
+export const darkTheme = {
+  body: '#303437',
+  text: '#ffffff',
+  toggleBackground: '#F1C945',
+};
+
+export type Theme = typeof lightTheme;
 declare module '@mui/material/styles' {
-  interface Palette {
-    custom: {
-      light: string;
-      main: string;
-      dark: string;
-      contrastText: string;
-    };
-  }
-  interface PaletteOptions {
-    custom: {
-      light: string;
-      main: string;
-      dark: string;
-      contrastText: string;
-    };
-  }
+	interface PaletteOptions {
+		custom: {
+			light: string;
+			main: string;
+			dark: string;
+			contrastText: string;
+			darkMode: {
+				color: string;
+			};
+			lightMode: {
+				color: string;
+			};
+		};
+	}
+  interface Palette extends PaletteOptions {}
 }
 
-const theme = createTheme({
+const muiTheme = createTheme({
 	palette: {
 		primary: {
 			main: '#ff4400',
@@ -30,6 +41,12 @@ const theme = createTheme({
 			contrastText: '#ffcc00',
 		},
 		custom: {
+			darkMode: {
+				color: '#303437',
+			},
+			lightMode: {
+				color: '#ffffff',
+			},
 			light: '#ffa726',
 			main: '#f57c00',
 			dark: '#ef6c00',
@@ -40,4 +57,4 @@ const theme = createTheme({
 	},
 });
 
-export default theme;
+export default muiTheme;

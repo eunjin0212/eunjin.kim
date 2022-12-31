@@ -1,13 +1,22 @@
-import { Link } from '@mui/material';
+import { AppBar, Link, Snackbar } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { ThemeInterface } from 'styles/GlobalStyle';
 
-export const HeaderWrapper = styled('div')`
-	display: flex;
-	align-items: center;
+export const HeaderWrapper = styled(AppBar)`
+  flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	padding: 0 12px;
 	height: 45px;
 	width: 100vw;
+  &.MuiAppBar-root {
+    box-shadow: none;
+    .MuiBox-root {
+      .MuiIconButton-sizeSmall {
+        font-size: 14px;
+      }
+    }
+  }
 `;
 export const Title = styled(Link)`
 	white-space: nowrap;
@@ -23,3 +32,7 @@ export const Title = styled(Link)`
     margin-right: 6px;
   }
 `;
+
+export const Alert = styled(Snackbar)`
+background-color: ${({theme}: ThemeInterface) => theme.text};
+`
