@@ -1,12 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-export interface ThemeInterface {
-	theme: {
-		body: string;
-		text: string;
-		toggleBackground: string;
-	};
-}
+import { ThemeInterface } from 'types/ThemeType';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}

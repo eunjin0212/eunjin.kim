@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material/styles';
+
 export const lightTheme = {
   body: '#ffffff',
   text: '#303437',
@@ -11,7 +12,6 @@ export const darkTheme = {
   toggleBackground: '#F1C945',
 };
 
-export type Theme = typeof lightTheme;
 declare module '@mui/material/styles' {
 	interface PaletteOptions {
 		custom: {
