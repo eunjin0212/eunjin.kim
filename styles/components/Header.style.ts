@@ -31,4 +31,8 @@ export const Title = styled(Link)`
 	}
 `;
 
-export const Alert = styled(Snackbar)``;
+export const Alert = styled(Snackbar)`
+	.MuiSnackbarContent-root {
+		justify-content: center;
+	}
+`;

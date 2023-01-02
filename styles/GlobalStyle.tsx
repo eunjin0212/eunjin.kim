@@ -28,6 +28,9 @@ const GlobalStyle = createGlobalStyle`
   html, body, #__next {
     height: 100%;
   }
+  #__next {
+    padding-top: 45px;
+  }
 
   #__next, .MuiAppBar-root, .MuiTypography-root {
     background-color: ${({ theme }: ThemeInterface) => theme.body};
