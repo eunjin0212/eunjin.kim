@@ -1,5 +1,6 @@
 import ShareIcon from '@mui/icons-material/Share';
 import { Box, Button, SvgIcon } from '@mui/material';
+import { portfolioData } from 'mock/data';
 import dynamic from 'next/dynamic';
 import Lamp from 'public/lamp.svg';
 import { useState } from 'react';
@@ -37,7 +38,7 @@ const Header = (theme: ThemeInterface) => {
 			<HeaderWrapper position='fixed' enableColorOnDark>
 				<Title underline='none'>
 					<SvgIcon component={Lamp} inheritViewBox fontSize={'small'} />
-					꾸준함의 가치를 아는 개발자
+					{portfolioData.title}
 				</Title>
 				<Box>
 					<Button

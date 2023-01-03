@@ -6,17 +6,17 @@ import { createContext } from 'react';
 import GlobalStyle from 'styles/GlobalStyle';
 import muiTheme, { lightTheme } from 'styles/Theme';
 import { Theme } from 'types/ThemeType';
+import Introduce from './Introduce';
 interface ContextProps {
 	theme: Theme;
 	toggleTheme: () => void;
 }
 
 export const ThemeContext = createContext<ContextProps>({
-  theme: lightTheme, // 테마(라이트, 다크)
-  toggleTheme: () => {
-    // 테마 변경하는 함수
-    return null;
-  },
+	theme: lightTheme,
+	toggleTheme: () => {
+		return null;
+	},
 });
 export default function App({ Component, pageProps }: AppProps) {
 	const { theme, toggleTheme } = useDarkMode();
@@ -26,7 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
 			<ThemeProvider theme={muiTheme}>
 				<GlobalStyle theme={theme} />
 				<Header theme={theme} />
-				<Component theme={theme} {...pageProps} />
+        <Introduce />
+				{/* <Component theme={theme} {...pageProps} /> */}
 			</ThemeProvider>
 		</ThemeContext.Provider>
 	);
