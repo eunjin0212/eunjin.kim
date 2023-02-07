@@ -1,15 +1,15 @@
 import { createTheme } from '@mui/material/styles';
 
 export const lightTheme = {
-  body: '#ffffff',
-  text: '#303437',
-  toggleBackground: '#D2D2D2',
+	body: '#ffffff',
+	text: '#303437',
+	toggleBackground: '#D2D2D2',
 };
 
 export const darkTheme = {
-  body: '#303437',
-  text: '#ffffff',
-  toggleBackground: '#F1C945',
+	body: '#303437',
+	text: '#ffffff',
+	toggleBackground: '#F1C945',
 };
 
 declare module '@mui/material/styles' {
@@ -27,10 +27,22 @@ declare module '@mui/material/styles' {
 			};
 		};
 	}
-  interface Palette extends PaletteOptions {}
+	interface Palette extends PaletteOptions {}
 }
 
 const muiTheme = createTheme({
+	components: {
+		MuiToolbar: {
+      styleOverrides: {
+        root: {
+          padding: '0 !important',
+          minHeight: '100% !important',
+          width: '100%',
+          justifyContent: 'space-between'
+        },
+      }
+		},
+	},
 	palette: {
 		primary: {
 			main: '#ff4400',

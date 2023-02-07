@@ -4,7 +4,12 @@ import { portfolioData } from 'mock/data';
 import dynamic from 'next/dynamic';
 import Lamp from 'public/lamp.svg';
 import { useState } from 'react';
-import { Alert, HeaderWrapper, Title } from 'styles/components/Header.style';
+import {
+  Alert,
+  HeaderToolBar,
+  HeaderWrapper,
+  Title
+} from 'styles/components/Header.style';
 import { ThemeInterface } from 'types/ThemeType';
 
 interface ShareData {
@@ -35,22 +40,24 @@ const Header = (theme: ThemeInterface) => {
 	};
 	return (
 		<>
-			<HeaderWrapper position='fixed' enableColorOnDark>
-				<Title underline='none'>
-					<SvgIcon component={Lamp} inheritViewBox fontSize={'small'} />
-					{portfolioData.title}
-				</Title>
-				<Box>
-					<Button
-						color='inherit'
-						aria-label='share'
-						size='small'
-						startIcon={<ShareIcon fontSize='inherit' />}
-						onClick={handleShareBtn}>
-						공유
-					</Button>
-					<ThemeMode />
-				</Box>
+			<HeaderWrapper component='nav' enableColorOnDark>
+				<HeaderToolBar>
+					<Title underline='none'>
+						<SvgIcon component={Lamp} inheritViewBox fontSize={'small'} />
+						{portfolioData.title}
+					</Title>
+					<Box>
+						<Button
+							color='inherit'
+							aria-label='share'
+							size='small'
+							startIcon={<ShareIcon fontSize='inherit' />}
+							onClick={handleShareBtn}>
+							공유
+						</Button>
+						<ThemeMode />
+					</Box>
+				</HeaderToolBar>
 			</HeaderWrapper>
 			<Alert
 				onClose={handleAlert}

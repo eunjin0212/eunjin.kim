@@ -1,38 +1,37 @@
-import { AppBar, Link, Snackbar } from '@mui/material';
+import { AppBar, Link, Snackbar, Toolbar } from '@mui/material';
 import { styled } from '@mui/material/styles';
-export const HeaderWrapper = styled(AppBar)`
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 12px;
-	height: 45px;
-	width: 100vw;
-	&.MuiAppBar-root {
-		box-shadow: none;
-		.MuiBox-root {
-			.MuiIconButton-sizeSmall {
-				font-size: 14px;
-			}
-		}
-	}
-`;
-export const Title = styled(Link)`
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	font-size: 14px;
-	height: 20px;
-	display: inline-flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	.MuiSvgIcon-root {
-		width: 17.76px;
-		height: 17.76px;
-		margin-right: 6px;
-	}
-`;
+export const HeaderWrapper = styled(AppBar)({
+	padding: '0 0.75rem',
+	height: '45px',
+	width: '100vw',
+	'&.MuiAppBar-root': {
+		boxShadow: 'none',
+		'.MuiBox-root': {
+			'.MuiIconButton-sizeSmall': {
+				fontSize: '1rem',
+			},
+		},
+	},
+}) as typeof AppBar;
+export const HeaderToolBar = styled(Toolbar)({
+}) as typeof Toolbar;
+export const Title = styled(Link)({
+	whiteSpace: 'nowrap',
+	textOverflow: 'ellipsis',
+	fontSize: '14px',
+	height: '20px',
+	display: 'inline-flex',
+	flexWrap: 'nowrap',
+	alignItems: 'center',
+	'.MuiSvgIcon-root': {
+		width: '17.76px',
+		height: '17.76px',
+		marginRight: '6px',
+	},
+}) as typeof Link;
 
-export const Alert = styled(Snackbar)`
-	.MuiSnackbarContent-root {
-		justify-content: center;
-	}
-`;
+export const Alert = styled(Snackbar)({
+	'.MuiSnackbarContent-root': {
+		justifyContent: 'center',
+	},
+}) as typeof Snackbar;
