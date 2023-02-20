@@ -1,12 +1,12 @@
-import { SvgIcon } from '@mui/material';
+import { Grid, SvgIcon } from '@mui/material';
 import { portfolioData } from 'mock/data';
 import Lamp from 'public/lamp.svg';
 import {
   Caption,
   ExplanationBox,
+  IntroBody,
+  IntroHeader,
   Item,
-  MainBody,
-  MainHeader,
   MainWrapper,
   Title
 } from 'styles/components/Introduce.style';
@@ -14,26 +14,30 @@ import {
 const Introduce = () => {
 	return (
 		<MainWrapper>
-			<MainHeader>
-				<SvgIcon component={Lamp} inheritViewBox fontSize={'large'} />
-				<Title variant='h4'>{portfolioData.title}</Title>
+			<IntroHeader>
+				<SvgIcon fontSize='large' component={Lamp} inheritViewBox />
+				<Title variant='h3'>{portfolioData.title}</Title>
 				<Caption variant='caption'>{portfolioData.caption}</Caption>
-			</MainHeader>
-			<MainBody>
-				<Item alt='mainImg' src={portfolioData.mainImg}></Item>
-				<ExplanationBox>
-					{portfolioData.about.map((item, key) => (
-						<div key={key}>
-							<label>
-								<span>{item.prevText}</span>
-								<u>{item.emphasis}</u>
-								<span>{item.nextText}</span>
-							</label>
-							<b>{item.bold}</b>
-						</div>
-					))}
-				</ExplanationBox>
-			</MainBody>
+			</IntroHeader>
+			<IntroBody container columnSpacing={2}>
+				<Grid item xs={6}>
+					<Item alt='mainImg' src={portfolioData.mainImg}></Item>
+				</Grid>
+				<Grid item xs={6}>
+					<ExplanationBox>
+						{portfolioData.about.map((item, key) => (
+							<div key={key}>
+								<p>
+									<span>{item.prevText}</span>
+									<u>{item.emphasis}</u>
+									<span>{item.nextText}</span>
+								</p>
+								<b>{item.bold}</b>
+							</div>
+						))}
+					</ExplanationBox>
+				</Grid>
+			</IntroBody>
 		</MainWrapper>
 	);
 };
